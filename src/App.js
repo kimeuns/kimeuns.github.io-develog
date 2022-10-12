@@ -1,25 +1,42 @@
-import logo from './logo.svg';
+import React, { useState, useEffect, useTransition, useDeferredValue} from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+import {Container, Card, Row, Col, Nav} from 'react-bootstrap';
+import { Routes, Route, Link, useNavigate, Outlet} from "react-router-dom";
+import styled from "styled-components";
+
+import Home from './pages/Home'
+import Info from './pages/components/Info'
+
+import { useSelector, useDispatch } from "react-redux";
 import './App.css';
 
-function App() {
+function App() { 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Routes>
+        <Route path="/" element={<Home />}>
+
+        </Route>
+      </Routes>
+    </>
+  )
 }
+
+function TabContent({ tab }) {
+  let [fade, setFade] = useState("");
+
+  useEffect(() => {
+    setTimeout(() => {
+      setFade("end");
+    }, 500);
+    return () => {
+      setFade("");
+    };
+  }, [tab]);
+
+  
+}
+
+
 
 export default App;

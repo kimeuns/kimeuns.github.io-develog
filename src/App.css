@@ -1,10 +1,28 @@
 .App {
-  text-align: center;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.black-nav {
+  display: flex;
+  background: #000;
+  width: 100%;
+  color: #fff;
+  padding-left: 20px;
+}
+
+.modal{
+  background-color: skyblue;
+  width: 60%;
+  margin: auto;
+  padding: 3px;
+}
+
+.add {
+  margin: 20px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
